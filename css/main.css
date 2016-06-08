@@ -1,0 +1,269 @@
+* {
+    font-family: "Open Sans", sans-serif;
+}
+html, body {
+   width: 100%;
+   height: 100%;
+   /*overflow: hidden;*/
+}
+body {
+    background-color: #dfdfdf;
+    z-index: 1;
+    
+}
+header {
+    background-color: #009688;
+    height: 127px;
+    width: 100%;
+    position: fixed;
+}
+.whatsapp {
+    margin: 0 auto;
+    box-shadow: 0 2px 5px #bfbfbf;
+    position: relative;
+    top: 20px;
+    border-radius: 3px;
+    overflow: hidden;
+    transform-origin: center;
+    height: 600px;
+}
+aside {
+    border-right: 1px solid #DDD9D6;
+}
+.header-contacto {
+    background-color: #EEE;
+}
+.profile-photo {
+    width: 40px;
+    height: 40px;
+    margin: 8px 15px;
+    display: inline-block;
+ 
+}
+.profile-photo img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+.header-contacto span, .header-chat span {
+    color: #777777;
+    font-size: 20px;
+    float: right;
+    margin: 18px 15px;
+}
+.buscador {
+    background-color: white;
+    padding: 10px;
+    color: #FBFBFB;
+    border-bottom: 1px solid #DDD9D6;
+}
+.buscador div {
+    border: 1px solid #F1F1F1;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    
+}
+.buscador span {
+    color: #B3B3B3;
+    margin-left: 10px;
+}
+.buscador input {
+    border: none;
+    margin-left: 10px;
+    min-width: 215px;
+    color: #B3B3B3;
+
+}
+.buscador input:focus {
+    outline: 0px;
+}
+.lista-chats {
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: 479px;
+    max-height: 100%;
+    background-color: white;
+    
+}
+.preview-chat {
+    background-color: #FEFEFwE;
+    padding: 10px 0;
+    position: relative;
+    border-bottom: 1px solid #DDD9D6;
+    height: 74px;
+    min-width: 380px;
+}
+.preview-chat:hover {
+    background-color: #F4F5F5;
+    cursor: pointer;
+}
+.preview-chat span, .hora {
+    color: gray;
+}
+.profile-photo-chat {
+    width: 49px;
+    height: 49px;
+    margin:  0 15px;
+    display: inline-block;
+}
+.profile-photo-chat img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    vertical-align: 0;
+}
+.info, .infogrupo {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+}
+.fila {
+    text-align: justify;
+}
+.fila p {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.nombre {
+    font-size: 16px;
+    width: 230px;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.preview {
+    font-size: 14px;
+    position: relative;
+}
+.hora {
+    float: right;
+    font-size : 12px;
+}
+
+.header-chat {
+    background-color: #EEE;
+}
+
+.infogrupo p {
+    margin-bottom: 0;
+}
+.chat {
+    background-color: #EDE9E4;
+    background-image: url(../image/chat-panel-bg.png);
+    background-size: cover;
+	background-repeat: repeat-x;
+    padding: 25px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: 484px;
+    max-height: 100%;
+}
+.recibidos {
+    padding: 7px 5px 2px 15px;
+    background-color: white;
+    margin: 1px 0;
+    border-radius: 5px;
+    width: 380px;
+}
+.recibidos p {
+    margin-bottom: 0;
+    
+}
+.contacto {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.andrea {
+    color: #6BCEF3;
+}
+.mariana {
+    color: #E942A3;
+}
+.papu {
+    color: #35D0C0;
+}
+.aldo {
+    color: #DFB610;
+}
+.texto {
+    font-size: 14px;
+    color: gray;
+    text-align: left;
+    margin-bottom: 5px;
+}
+.hora-mensaje {
+    font-size: 11px;
+    text-align: right;
+    margin-bottom: 0;
+}
+.enviados {
+    padding: 7px 7px 2px 15px;
+    background-color: #DCF8C6;
+    float: right;
+    margin: 1px 0;
+}
+.enviados .texto {
+    margin-right: 10px;
+}
+.ingresar-mensaje {
+    padding: 0 15px;
+    background-color: #F3F0EF;
+    width: 100%;
+    min-height: 60px;
+}
+
+.emoticones, .grab-audio {
+    border: none;
+    background-color: transparent;
+    margin: 0 1%;
+
+}
+.emoticones {
+    position: relative;
+    left: 20px;
+    top: 10px;
+}
+.grab-audio {
+    position: relative;
+    top: 10px;
+    right: 20px;
+}
+.ingresar-mensaje {
+    text-align: center;
+}
+.ingresar-mensaje span {
+    color: #92908F;
+    font-size: 24px;
+}
+.ingresar-mensaje input {
+    width: calc(100% - 150px);
+    background-color: white;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+.ingresar-mensaje input:focus {
+    outline: 0px;
+}
+/*Scroll*/
+
+::-webkit-scrollbar{
+    width: 6px;
+}
+::-webkit-scrollbar-button{
+    display: none;
+}
+::-webkit-scrollbar-track{
+    background-color: inherit;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #CBCBCB;
+}
