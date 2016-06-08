@@ -46,6 +46,10 @@ function mostrarMensaje(mostrar) {
 	horaMensaje.id = 'horaMensaje'+cuenta+idChat;
 	horaMensaje.innerHTML = horaEnvio();
 	document.getElementById('enviados'+cuenta+idChat).appendChild(horaMensaje);
+	//Guardar historial
+	contactos[dataChat].historial.push(filaMensaje);
+	console.log(contactos[dataChat].historial);
+
 }
 function horaEnvio() {
 	var data = new Date();
@@ -62,27 +66,30 @@ function claseNueva() {
 	return cuenta;
 }
 
-
-
-
 //Cambiar entre pestañas de chat
-var idChat = 'chat1'; 
+var idChat = 'chat1';
+var dataChat = 0;
 $('.preview-chat').click(function(){
 	idChat = $(this).attr('id');
-	mostrarChat(idChat);
+	dataChat = $(this).attr('data');
+	mostrarChat(idChat, dataChat);
 })
 
-function mostrarChat(chat) {
+function mostrarChat(chat, data) {
 
 	var integrantes = 'Ana María, Aldo, Gian, Mariana Papu, Tú';
-
-	nombre = $('#'+chat).find('p.nombre').html();
+	//nombre = $('#'+chat).find('p.nombre').html();
+	nombre = contactos[data].nombre;
 	$('.infogrupo .nombre').html(nombre);
-	var imagen = $('#'+chat).find('img');
-	var ruta = imagen.attr('src');
+	//var imagen = $('#'+chat).find('img');
+	//var ruta = imagen.attr('src');
+	var ruta = contactos[data].rutafoto;
 	$('.header-chat img').attr('src', ruta);
+
 	var mensajesAnteriores = $('#'+chat).find('span.preview').html();
 	var horaEnviado = $('#'+chat).find('p.hora').html();
+
+
 	if (chat !== 'chat1') {
 		integrantes = ''
 		$('#chat').html('');
@@ -91,9 +98,62 @@ function mostrarChat(chat) {
 		$('#chat').html(contenidoChat);
 	}
 	$('.integrantes').html(integrantes);
-	
+	mostrarHistorial();
 }
-	
+
+var contactos = [{
+		nombre : 'Laboratoria Perú',
+		rutafoto : 'image/logocodeacademy.png',
+		integrantes : 'Ana María, Aldo, Gian, Mariana Papu, Tú',
+		historial : []
+	},
+	{
+		nombre : 'Raymi Saldomando',
+		rutafoto : 'image/raymi.jpg',
+		historial : []
+	},
+	{
+		nombre : 'Mariana Costa',
+		rutafoto : 'image/mariana.jpg',
+		historial : []
+	},
+	{
+		nombre : 'Ana María Martinez Franklin',
+		rutafoto : 'image/anamaria.jpg',
+		historial : []
+	},
+	{
+		nombre : 'Rodulfo Prieto',
+		rutafoto : 'image/rodulfo.jpg',
+		historial : []
+	},
+	{
+		nombre : 'Andrea Lamas',
+		rutafoto : 'image/andrea.jpg',
+		historial : []
+	},
+	{
+		nombre : 'Maria Paula Rivarola',
+		rutafoto : 'image/mariapaula.jpg',
+		historial : []
+	},
+	{
+		nombre : 'Katy Sánchez',
+		rutafoto : 'image/katy.jpg',
+		historial : []
+	},
+	{
+		nombre : 'Aldo Alfaro',
+		rutafoto : 'image/aldo.jpg',
+		historial : []
+	},
+	{
+		nombre : 'Raymi',
+		rutafoto : 'image/avatar.jpg',
+		historial : []
+	},
+]
+
 function mostrarMensajesAnteriores(preview, hora, usuario) {
 	var chat = document.getElementById('chat');
 	var fila = document.createElement('div');
@@ -123,6 +183,24 @@ function mostrarMensajesAnteriores(preview, hora, usuario) {
 	horaMensaje.innerHTML = hora;
 	document.getElementById('recibidos'+idChat).appendChild(horaMensaje);
 }
+
+function mostrarHistorial() {
+	var chat = document.getElementById('chat');
+	var fila = document.createElement('div');
+	fila.className = 'row sinmargin';
+	fila.id = 'fila'+idChat;
+	chat.appendChild(fila);
+
+	//for para imprimir historial
+	for(numeromensaje=0;numeromensaje<contactos[dataChat].historial.length;numeromensaje++){
+		var caja = contactos[dataChat].historial[numeromensaje];
+		chat.appendChild(caja);
+	}
+	
+}
+
+
+
 /*
 $('#inputMensaje').emojiarea({
 	button: '.emoticones'
